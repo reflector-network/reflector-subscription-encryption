@@ -1,4 +1,7 @@
-import {decrypt, encrypt, generateRSAKeyPair, importRSAKey} from '../src/encryption.js'
+if (!globalThis.crypto) {
+    globalThis.crypto = require('node:crypto').webcrypto
+}
+const {decrypt, encrypt, generateRSAKeyPair, importRSAKey} = require('../src/encryption')
 
 describe('Encryption', () => {
     test('encryption + decryption works', async () => {

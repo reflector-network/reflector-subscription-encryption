@@ -1,6 +1,6 @@
 {
   "name": "@reflector/subscription-encryption",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Encryption primitives for Reflector subscriptions",
   "author": "info@stellar.expert",
   "license": "MIT",

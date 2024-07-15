@@ -116,7 +116,7 @@ export async function decrypt(rsaPrivateKey, encryptedData) {
         encryptedData = normalizeData(encryptedData)
         if (!encryptedData || encryptedData.length < 256)
             return null
-        if (!(rsaPrivateKey instanceof CryptoKey)) { //try to import
+        if (!rsaPrivateKey.algorithm) { //try to import
             rsaPrivateKey = await importRSAKey(rsaPrivateKey)
         }
         //decode AES KEY
