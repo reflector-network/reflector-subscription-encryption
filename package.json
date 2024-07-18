@@ -1,13 +1,16 @@
 {
   "name": "@reflector/subscription-encryption",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "Encryption primitives for Reflector subscriptions",
   "author": "info@stellar.expert",
   "license": "MIT",
-  "main": "./lib/encryption.js",
-  "module": "./src/encryption.js",
+  "type": "module",
+  "exports": {
+    "import": "./src/encryption.js",
+    "require": "./lib/encryption.js"
+  },
   "scripts": {
-    "build": "webpack --mode=production --config ./webpack.config.js",
+    "build": "webpack --mode=production --config webpack.config.cjs",
     "test": "jest"
   },
   "repository": {
@@ -25,5 +28,9 @@
     "jest": "^29.7.0",
     "webpack": "^5.93.0",
     "webpack-cli": "^5.1.4"
+  },
+  "jest": {
+    "transform": {
+    }
   }
 }

@@ -1,7 +1,10 @@
+//use node --experimental-vm-modules to run tests
+import {decrypt, encrypt, generateRSAKeyPair, importRSAKey} from '../src/encryption.js'
+import nativeCrypto from 'node:crypto'
+
 if (!globalThis.crypto) {
-    globalThis.crypto = require('node:crypto').webcrypto
+    globalThis.crypto = nativeCrypto.webcrypto
 }
-const {decrypt, encrypt, generateRSAKeyPair, importRSAKey} = require('../src/encryption')
 
 describe('Encryption', () => {
     test('encryption + decryption works', async () => {
