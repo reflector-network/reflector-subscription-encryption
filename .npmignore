@@ -6,5 +6,7 @@ pnpm-lock.yaml
 .vscode
 
 tests/
+babel.config.cjs
+webpack.config.cjs
 
 !.npmrc
